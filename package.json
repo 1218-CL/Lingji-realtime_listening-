@@ -1,0 +1,44 @@
+{
+  "name": "lingji-live-lecture",
+  "private": true,
+  "version": "1.2.0",
+  "type": "module",
+  "description": "聆记 - 实时听课、转写、AI 纪要、随堂问答与老师画像",
+  "packageManager": "pnpm@11.28.5",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "bin": "server/desktop.mjs",
+  "scripts": {
+    "dev": "node server/index.mjs --dev",
+    "build": "tsc --noEmit && vite build",
+    "start": "node server/index.mjs",
+    "preview": "node server/index.mjs",
+    "desktop:run": "node server/desktop.mjs",
+    "desktop:build": "pnpm build && node scripts/build-desktop.mjs",
+    "desktop:portable": "pnpm desktop:build && node scripts/build-portable.mjs",
+    "installer:build": "node scripts/build-installer.mjs",
+    "installer:all": "pnpm desktop:portable && node scripts/build-installer.mjs",
+    "update:manifest": "node scripts/build-update-manifest.mjs",
+    "update:smoke": "node scripts/update-smoke.mjs",
+    "asr:smoke": "node scripts/asr-smoke.mjs"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.6"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.1",
+    "@yao-pkg/pkg": "6.26.0",
+    "esbuild": "0.28.2",
+    "resedit": "3.1.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
+  }
+}

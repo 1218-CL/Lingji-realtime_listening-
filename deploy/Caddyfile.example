@@ -1,0 +1,10 @@
+# 把 lingji.example.com 换成你的域名，并提前把 DNS A/AAAA 记录指向服务器。
+# Caddy 会自动申请和续期 HTTPS 证书。
+lingji.example.com {
+	encode zstd gzip
+
+	# flush_interval -1 对 SSE（随堂问答流式回答）很重要
+	reverse_proxy 127.0.0.1:4173 {
+		flush_interval -1
+	}
+}

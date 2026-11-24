@@ -1,0 +1,16 @@
+node_modules
+dist
+release
+build
+.data
+.data-*
+.pnpm-store
+.browser-profile*
+screenshots
+.git
+.gitignore
+.env
+.env.*
+*.log
+README.md
+deploy

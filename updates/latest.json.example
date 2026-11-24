@@ -1,0 +1,11 @@
+{
+  "version": "1.2.0",
+  "publishedAt": "2026-12-01T08:00:00.000Z",
+  "notes": [
+    "这里写本次更新的用户可感知变化",
+    "最多 8 条，每条尽量短"
+  ],
+  "downloadUrl": "https://your-domain.com/downloads/LingJi-Setup-1.2.0.exe",
+  "sha256": "把安装包的 sha256 填在这里",
+  "size": 22616210
+}

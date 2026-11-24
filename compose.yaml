@@ -1,0 +1,25 @@
+services:
+  lingji:
+    build: .
+    image: lingji:latest
+    container_name: lingji
+    restart: unless-stopped
+    init: true
+    ports:
+      - "127.0.0.1:4173:4173"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 4173
+      APP_SECRET: ${APP_SECRET:?请在 .env 中设置 APP_SECRET}
+      COOKIE_SECURE: ${COOKIE_SECURE:-true}
+      TRUST_PROXY: ${TRUST_PROXY:-true}
+      SEED_DEMO: ${SEED_DEMO:-false}
+      UPDATE_MANIFEST_URL: ${UPDATE_MANIFEST_URL:-}
+    volumes:
+      - lingji_data:/app/.data
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  lingji_data:
+    name: lingji_data
